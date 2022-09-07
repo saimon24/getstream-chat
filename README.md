@@ -4,10 +4,18 @@ This is a chat example using [Stream](https://getstream.io/)!
 
 ## Development
 
-Make sure you create your own *.env* file using the example env and paste in your [Stream](https://getstream.io/) keys!
+Make sure you create your own _.env_ file using the example env and paste in your [Stream](https://getstream.io/) keys!
 
 Run `netlify dev` to bring up the app & functions. Navigate to `http://localhost:8888/` to access the app, because the functions need to run on the same domain to prevent CORS issues.
 
-## Build
+## Preview
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You can find a running version of this app here: `https://sweet-pie-0c1164.netlify.app/`
+
+Preview of the login:
+
+![Login](./preview/login.png)
+
+Preview of the chat:
+
+![Chat](./preview/chat.png)
