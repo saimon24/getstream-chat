@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~stream-chat-angular/src/assets/styles/v2/scss/index.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply h-full;
+}
+body {
+  @apply h-full;
+}
+
+:root {
+  .str-chat {
+    --str-chat__channel-header-background-color: theme("colors.sky.100");
+    --str-chat__channel-preview-active-background-color: theme(
+      "colors.sky.300"
+    );
+  }
+
+  stream-channel-header {
+    margin-bottom: 10px;
+  }
+}

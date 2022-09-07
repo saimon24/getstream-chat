@@ -1,0 +1,47 @@
+<header class="bg-blue-600">
+  <nav
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    aria-label="Top navigation"
+  >
+    <div class="w-full py-6 flex gap-4">
+      <a
+        routerLink="/app/dashboard"
+        routerLinkActive="active-link"
+        class="text-base font-medium text-white hover:text-indigo-50"
+      >
+        Dashboard
+      </a>
+      <a
+        routerLink="/app/channels"
+        routerLinkActive="active-link"
+        class="text-base font-medium text-white hover:text-indigo-50"
+      >
+        Chats
+      </a>
+
+      <button
+        (click)="signOut()"
+        class="text-base font-medium text-white hover:text-indigo-50"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-6 h-4/5">
+  <router-outlet></router-outlet>
+</div>
