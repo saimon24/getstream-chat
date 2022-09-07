@@ -10,7 +10,7 @@ Run `netlify dev` to bring up the app & functions. Navigate to `http://localhost
 
 ## Preview
 
-You can find a running version of this app here: `https://sweet-pie-0c1164.netlify.app/`
+You can find a running version of this app here: [Angular Stream Chat](https://sweet-pie-0c1164.netlify.app/)
 
 Preview of the login:
 
