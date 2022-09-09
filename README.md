@@ -16,6 +16,14 @@ Preview of the login:
 
 ![Login](./preview/login.png)
 
+Preview of the dashboard:
+
+![Chat](./preview/dashboard.png)
+
+Preview of the single class page:
+
+![Chat](./preview/class.png)
+
 Preview of the chat:
 
 ![Chat](./preview/chat.png)
