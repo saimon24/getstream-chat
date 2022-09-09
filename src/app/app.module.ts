@@ -14,9 +14,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InsideLayoutComponent } from './inside-layout/inside-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, ChannelListComponent, LoginComponent, InsideLayoutComponent, DashboardComponent],
+  declarations: [
+    AppComponent,
+    ChannelListComponent,
+    LoginComponent,
+    InsideLayoutComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -25,6 +33,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     StreamChatModule,
     TranslateModule.forRoot(),
     HttpClientModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-pulse' }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
