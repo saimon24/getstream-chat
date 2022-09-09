@@ -8,7 +8,6 @@ import {
   StreamChatModule,
   StreamAutocompleteTextareaModule,
 } from 'stream-chat-angular';
-import { ChannelListComponent } from './channel-list/channel-list.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,14 +15,20 @@ import { InsideLayoutComponent } from './inside-layout/inside-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClassComponent } from './class/class.component';
+import { StudentsComponent } from './students/students.component';
+import { ChatsComponent } from './chats/chats.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChannelListComponent,
     LoginComponent,
     InsideLayoutComponent,
     DashboardComponent,
+    ClassComponent,
+    StudentsComponent,
+    ChatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     NgxSpinnerModule.forRoot({ type: 'ball-pulse' }),
     BrowserAnimationsModule,
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

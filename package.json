@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@netlify/functions": "^1.2.0",
+    "@ng-select/ng-select": "^9.0.2",
     "@ngx-translate/core": "^14.0.0",
     "jwt-decode": "^3.1.2",
     "ngx-spinner": "^14.0.0",

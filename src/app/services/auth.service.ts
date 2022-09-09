@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, switchMap, BehaviorSubject, tap, take } from 'rxjs';
 import jwt_decode from 'jwt-decode';
-import { ChatClientService, ChannelService } from 'stream-chat-angular';
 
 export const USER_STORAGE_KEY = 'usertoken';
 
@@ -18,11 +17,7 @@ export class AuthService {
   private user: BehaviorSubject<UserData | null | undefined> =
     new BehaviorSubject<UserData | null | undefined>(undefined);
 
-  constructor(
-    private http: HttpClient,
-    private chatService: ChatClientService,
-    private channelService: ChannelService
-  ) {
+  constructor(private http: HttpClient) {
     this.loadUser();
   }
 
@@ -106,10 +101,6 @@ export class AuthService {
   async signOut() {
     localStorage.removeItem(USER_STORAGE_KEY);
 
-    if (this.chatService.chatClient) {
-      await this.chatService.disconnectUser();
-      await this.channelService.reset();
-    }
     this.http
       .post(`${window.location.origin}/.netlify/functions/revoke_token`, {
         id: this.getCurrentUserId(),

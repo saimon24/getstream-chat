@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChannelListComponent } from './channel-list.component';
+import { ClassComponent } from './class.component';
 
-describe('ChannelListComponent', () => {
-  let component: ChannelListComponent;
-  let fixture: ComponentFixture<ChannelListComponent>;
+describe('ClassComponent', () => {
+  let component: ClassComponent;
+  let fixture: ComponentFixture<ClassComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChannelListComponent ]
+      declarations: [ ClassComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChannelListComponent);
+    fixture = TestBed.createComponent(ClassComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

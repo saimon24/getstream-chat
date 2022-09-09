@@ -1,0 +1,86 @@
+<ngx-spinner></ngx-spinner>
+
+<div class="relative px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28 h-full">
+  <h1 class="text-3xl font-bold tracking-tight text-gray-900 items-center flex">
+    <span class="block xl:inline">{{ class?.name }}</span>
+    <button
+      type="button"
+      *ngIf="joinedChat && !loading"
+      (click)="leaveClassChat()"
+      class="inline-flex mx-4 items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+    >
+      Leave chat
+    </button>
+  </h1>
+  <div class="relative mx-auto max-w-7xl">
+    <div
+      class="mt-4 grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8 h-full"
+    >
+      <!-- Course Chat -->
+      <div class="grid grid-cols-1 gap-4 lg:col-span-2 h-full">
+        <section>
+          <div class="overflow-hidden rounded-lg bg-white shadow h-full">
+            <div class="p-6 h-full flex justify-center">
+              <!-- <stream-channel-list></stream-channel-list> -->
+              <stream-channel class="flex-grow" *ngIf="!loading && joinedChat">
+                <stream-channel-header></stream-channel-header>
+                <stream-message-list></stream-message-list>
+                <stream-notification-list></stream-notification-list>
+                <stream-message-input></stream-message-input>
+                <stream-thread name="thread">
+                  <stream-message-list mode="thread"></stream-message-list>
+                  <stream-message-input mode="thread"></stream-message-input>
+                </stream-thread>
+              </stream-channel>
+
+              <div *ngIf="loading && !joinedChat">Loading chat...</div>
+              <div
+                *ngIf="!loading && !joinedChat"
+                class="flex flex-col gap-4 justify-center items-center"
+              >
+                <span class="text-xl"
+                  >You are not yet a member of this chat.</span
+                >
+                <button
+                  type="button"
+                  (click)="joinClassChat()"
+                  class="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  Join chat
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Course description -->
+      <div class="grid grid-cols-1 gap-4">
+        <section>
+          <div class="overflow-hidden rounded-lg bg-white shadow">
+            <div class="p-6" [innerHtml]="class.desc"></div>
+
+            <div class="m-6 flex items-center">
+              <div class="flex-shrink-0">
+                <span class="sr-only">{{ class.teacher.name }}</span>
+                <img
+                  class="h-10 w-10 rounded-full"
+                  [src]="class.teacher.avatar"
+                  alt=""
+                />
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-900">
+                  <span>{{ class.teacher.name }}</span>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                  <time>{{ class.start | date: "medium" }}</time>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
