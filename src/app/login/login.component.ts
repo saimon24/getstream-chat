@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
         this.login();
       },
       (err) => {
-        console.log('reg err: ', err);
         this.spinner.hide();
         this.error = err.error;
       }
@@ -46,7 +45,6 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/app', { replaceUrl: true });
       },
       (err) => {
-        console.log('login err: ', err);
         this.spinner.hide();
         this.error = err.error;
       }

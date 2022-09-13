@@ -4,11 +4,9 @@ import { Injectable } from '@angular/core';
 import {
   ChannelService,
   ChatClientService,
-  DefaultStreamChatGenerics,
   StreamI18nService,
 } from 'stream-chat-angular';
 import { environment } from 'src/environments/environment';
-import { Channel } from 'stream-chat';
 
 @Injectable({
   providedIn: 'root',
@@ -24,8 +22,6 @@ export class StreamService {
   ) {
     this.authService.getCurrentUser().subscribe((user: any) => {
       if (user && user.stream_token) {
-        console.log('INIT CHAT CLIENT');
-
         this.chatService.init(
           environment.streamKey,
           `${user.id}`,
